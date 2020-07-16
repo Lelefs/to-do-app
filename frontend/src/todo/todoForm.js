@@ -1,7 +1,23 @@
 import React from 'react';
 
-export default () => (
-  <div>
-    <h1>Form</h1>
+import Grid from '../template/grid';
+import IconButton from '../template/iconButton';
+
+export default ({ handleAdd, description, handleChange }) => (
+  <div role="form" className="todoForm">
+    <Grid cols="12 9 10">
+      <input
+        type="text"
+        id="description"
+        className="form-control"
+        placeholder="Adicione uma tarefa"
+        onChange={handleChange}
+        value={description}
+      />
+    </Grid>
+
+    <Grid cols="12 3 2">
+      <IconButton style="primary" icon="plus" onClick={handleAdd} />
+    </Grid>
   </div>
 );
